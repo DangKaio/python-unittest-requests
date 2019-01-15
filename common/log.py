@@ -29,7 +29,7 @@ class Log:
 
     def __console(self, level, message):
         # 创建一个FileHandler，用于写到本地
-        fh = logging.FileHandler(self.logname, 'a',encoding='utf-8')  # 追加模式
+        fh = logging.FileHandler(self.logname, 'a', encoding='utf-8')  # 追加模式
         fh.setLevel(logging.DEBUG)
         fh.setFormatter(self.formatter)
         self.logger.addHandler(fh)
