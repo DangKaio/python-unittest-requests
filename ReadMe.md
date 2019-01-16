@@ -24,7 +24,7 @@ Files
     	__init__.py文件：初始化文件
     	ReadMe.md文件:框架说明文件
     	Test_Suite.py文件：程序在此处运行，包含unittest测试用例的运行，报告的生成，邮件的发送等
-    
+
 2. case_excel文件夹：
 		__init__.py文件：初始化文件
 		copy_excel.py文件:对excel文件的复制和写入
@@ -35,6 +35,7 @@ Files
 		my_test.py文件：unittest框架初始化
 		read_config.py文件：配置文件的读取
 		sendmail.py文件：用来发送邮件
+		mysql_read.py文件：用来读取mysql
 4. config文件夹：
 		__init__.py文件：初始化文件
 		config.ini文件：配置项目路径
@@ -49,7 +50,7 @@ Files
 7. test_case文件夹：
 		test_test.py文件:利用ddt数据驱动对复用单个用例
 8. test文件夹:
-	
+
 
 仍存在bug
 ===
