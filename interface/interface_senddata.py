@@ -18,6 +18,7 @@ from case_excel.copy_excel import Write_excel
 
 def send_requests(s, testdata):
     '''封装requests请求'''
+    # 请求方法
     method = testdata["Request Method"]
     url = testdata["Request URL"]
     # # url后面的params参数
@@ -25,12 +26,12 @@ def send_requests(s, testdata):
     #     params = eval(testdata["params"])
     # except:
     #     params = None
-    # # 请求头部headers
-    # try:
-    #     headers = eval(testdata["headers"])
-    #     print("请求头部：%s" % headers)
-    # except:
-    #     headers = None
+    # 请求头部headers
+    try:
+        headers = eval(testdata["Headers"])
+        print("请求头部：%s" % headers)
+    except:
+        headers = None
     # post请求body类型
     type = testdata["Request Data Type"]
     test_nub = testdata['API Purpose']
@@ -47,9 +48,10 @@ def send_requests(s, testdata):
         body = bodydata
     elif type == "Json":
         body = json.dumps(bodydata)
+        # body = {"userName": "admin", "password": "Abc123"}
     else:
         body = bodydata
-    if method == "post":
+    if method == "POST":
         logger.info("post请求body类型为：%s ,body内容为：%s" % (type, body))
     verify = True
     res = {}   # 接受返回数据
@@ -57,9 +59,9 @@ def send_requests(s, testdata):
         r = s.request(method=method,
                       url=url,
                       data=body,
-                      verify=verify
-                      )  # headers=headers,params=params,
-        # logger.info("页面返回信息：%s" % r.json())  # .json()
+                      headers=headers
+                      )  # headers=headers,params=params,,verify=verify
+        logger.info("页面返回信息：%s" % r.text)  # .json()
         # print(type(r.content.decode('utf-8')))
         res['No.'] = testdata['No.']
         res['API Purpose'] = testdata['API Purpose']
@@ -91,7 +93,7 @@ def wirte_result(result, filename=globalparam.result_path):
     # 返回结果的行数row_nub
     # print(result)
     row_nub = result['No.']+1
-    col_nub=10 #开始的列
+    col_nub = 11 #开始的列
     # 写入statuscode
     wt = Write_excel(filename)
     wt.write(row_nub, col_nub, result['status_code'])       # 写入返回状态码statuscode,第12列

@@ -22,15 +22,14 @@ testdata = ExcelUtil(data_path_name, read_excel_sheetname).dict_data()
 @ddt.ddt
 class My_Test(unittest.TestCase):
     """docstring for My_Test"""
-    # zhyAdmin/v1/system/user/login
     @classmethod
     def setUpClass(cls):
-        cls.headers = {
-            'Content-Type': 'application/json;charset=UTF-8',
-            'Accept-Language': 'zh-CN,zh;q=0.9',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
-        }
-        cls.url = globalparam.url
+        # cls.headers = {
+        #     'Content-Type': 'application/json;charset=UTF-8',
+        #     'Accept-Language': 'zh-CN,zh;q=0.9',
+        #     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+        # }
+        # cls.url = globalparam.url
         cls.s = requests.session()
         copy_excel(globalparam.data_path_name, globalparam.result_path)
         cls.run_method = Run_Method()

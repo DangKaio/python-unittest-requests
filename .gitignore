@@ -13,3 +13,6 @@ report/test_result/report.xlsx
 *.xlsx
 *.pyc
 *.xlsx
+*.xlsx
+*.pyc
+*.xml

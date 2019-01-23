@@ -34,7 +34,7 @@ def report():
     else:
         now = time.strftime('%Y-%m-%d_%H_%M_%S')
         report_name = os.getcwd() + '\\report\\test_report\\' + now + 'result.html'
-        return report_name
+    return report_name
 
 
 f = open(report(), 'wb')

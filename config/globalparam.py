@@ -7,9 +7,10 @@
 # @Description:定义一些默认参数、路径等
 import os
 import sys
+import time
 sys.path.append('../')
 
-
+now = time.strftime('%Y-%m-%d_%H_%M_%S')
 # 项目参数设置
 prj_path = os.path.dirname(os.path.dirname(__file__))
 # 日志路径
@@ -17,7 +18,7 @@ log_path = os.path.join(prj_path, 'report', 'Log')
 # 测试报告路径
 report_path = os.path.join(prj_path, 'report', 'test_report')
 # 测试excel结果路径
-result_path = os.path.join(prj_path, 'report', 'test_result/report.xlsx')
+result_path = os.path.join(prj_path, 'report', 'test_result/'+now+'report.xlsx')
 # 默认浏览器
 browser = 'Chrome'
 #浏览器
