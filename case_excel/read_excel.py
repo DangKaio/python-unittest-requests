@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Dang Kai
 # @Date: 2018-08-06 17:25:43
-# @Last Modified time: 2018-08-07 10:12:47
+# @Last Modified time: 2019-04-30 15:05:42
 # @E-mail: 1370465454@qq.com
 # @Description:读取excel的方法封装
 import xlrd
@@ -22,7 +22,7 @@ class ExcelUtil(object):
 
     def dict_data(self):
         if self.rowNum <= 1:
-            print("总行数小于1")
+            print("总行数小于等于1")
         else:
             r = []
             j = 1
@@ -36,6 +36,8 @@ class ExcelUtil(object):
                 r.append(s)
                 j += 1
             return r
+
+
 if __name__ == '__main__':
     ExcelUtil = ExcelUtil("TestCase.xlsx", "TestCase")
     print(ExcelUtil.dict_data())

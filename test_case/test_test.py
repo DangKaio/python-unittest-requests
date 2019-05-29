@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 # @Author: Dang Kai
 # @Date: 2018-08-06 17:25:43
-# @Last Modified time: 2018-08-09 10:56:43
+# @Last Modified time: 2019-04-22 09:21:38
 # @E-mail: 1370465454@qq.com
-# @Description: 
+# @Description:
 import sys,ddt
 sys.path.append("../")
 from common import my_test
@@ -32,7 +32,7 @@ class Test_Case(my_test.My_Test):
         # print("返回实际结果->：%s"%res_text)
         # # 断言
         # self.assertTrue(check in res_text)
-   
+
 if __name__ == '__main__':
     # unittest.main()中加 verbosity 参数可以控制输出的错误报告的详细程度，默认是 1，如果设为
     # 0，则不输出每一用例的执行结果，即没有上面的结果中的第1行；如果设为 2，则输出详细的执行结果
