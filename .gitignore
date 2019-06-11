@@ -1,10 +1,9 @@
-*.html
 *.log
 *.xlsx
-*.pyc
-*.xml
 idea/
 test_report/
 test_result/
 *.xml
+venv/
+.idea/
 *.pyc
