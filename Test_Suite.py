@@ -26,6 +26,7 @@ def create_suite():
 
 
 def report():
+
     if len(sys.argv) > 1:
         report_name = os.getcwd() + '\\report\\test_report\\' + \
             sys.argv[1] + '_result.html'

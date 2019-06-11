@@ -12,7 +12,7 @@ sys.path.append('../')
 from config import globalparam
 from common.log import Log
 import ddt
-from interface.interface_method import Run_Method
+from interface.interface_method import run_main
 from config.globalparam import data_path_name, read_excel_sheetname, now
 from case_excel.read_excel import ExcelUtil
 from case_excel.copy_excel import copy_excel
@@ -29,11 +29,9 @@ class My_Test(unittest.TestCase):
         #     'Accept-Language': 'zh-CN,zh;q=0.9',
         #     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
         # }
-        # cls.url = globalparam.url
         cls.s = requests.session()
         copy_excel(globalparam.data_path_name,
                    globalparam.result_path)
-        cls.run_method = Run_Method()
         cls.logger = Log()
         cls.logger.info(
             '############################### START ###############################')

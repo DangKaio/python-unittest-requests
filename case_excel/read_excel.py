@@ -39,5 +39,5 @@ class ExcelUtil(object):
 
 
 if __name__ == '__main__':
-    ExcelUtil = ExcelUtil("TestCase.xlsx", "TestCase")
+    ExcelUtil = ExcelUtil("../data/TestCase.xlsx", "TestCase")
     print(ExcelUtil.dict_data())

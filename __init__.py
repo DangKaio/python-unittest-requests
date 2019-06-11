@@ -3,3 +3,7 @@
 # @Email : 1370465454@qq.com
 # @Date:   2019-03-21 18:09:55
 # @Last Modified time: 2019-04-26 09:51:55
+import os
+from common.publicfunction import new_file
+new_file(os.getcwd() + '\\report\\test_report\\')
+new_file(os.getcwd() + '\\report\\test_result\\')

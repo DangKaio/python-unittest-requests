@@ -8,3 +8,7 @@ venv/
 .idea/
 *.pyc
 data/
+*.pyc
+*.pyc
+report/__pycache__/__init__.cpython-37.pyc
+report/Runner/__pycache__/HTMLTestRunner3.cpython-37.pyc
