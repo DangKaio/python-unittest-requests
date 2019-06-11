@@ -52,11 +52,4 @@ Files
 8. test文件夹:
 
 
-仍存在bug
-===
-
-此程序有个bug log打印会重复打印
-解决方法:log.py  # 这两行代码是为了避免日志输出重复问题
-        # self.logger.removeHandler(ch)
-        self.logger.removeHandler(fh)
 不知道为什么打印到HTML报告中，确控制台不打印了，我也是服了，这里记录下来
