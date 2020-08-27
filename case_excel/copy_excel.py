@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Dang Kai
 # @Date: 2018-08-06 17:25:43
-# @Last Modified time: 2019-04-26 10:39:07
+# @Last Modified time: 2019-07-30 17:50:41
 # @E-mail: 1370465454@qq.com
 # @Description:封装一个写入excel数据的方法
 import openpyxl

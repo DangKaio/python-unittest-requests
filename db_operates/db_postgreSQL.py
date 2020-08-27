@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 # @Author: Dang Kai
 # @Email : 1370465454@qq.com
-# @Date:   2019-05-21 16:44:36
-# @Last Modified time: 2019-06-19 16:47:52
-import pymysql
+# @Date:   2019-06-19 16:50:09
+# @Last Modified time: 2019-06-19 18:45:27
+import psycopg2
 import sys
+import datetime
+import time
 sys.path.append('../')
 from config.globalparam import db_config
 
@@ -22,7 +24,7 @@ class DbOperate(object):
 
     def db_operate(self):
         try:
-            self.conn = pymysql.connect(**db_config)
+            self.conn = psycopg2.connect(**db_config)
         except Exception as e:
             return {'code': '12306', 'msg': '数据库连接异常>>>%s' % e}
 
@@ -34,13 +36,13 @@ class DbOperate(object):
             return {'code': '12307', 'msg': 'sql错误>>>%s' % e}
         else:
             if self.sql.startswith('select'):
-                ret = self.cur.fetchone()
+                # ret = self.cur.fetchone()
+                ret = self.cur.fetchall()
             else:
                 if self.sql.startswith('delete') and self.sql.count('=') != 1:
                     return {'code': '12308', 'msg': 'delete操作必须带where条件，一次只能删除一条数据'}
-                elif self.sql.startswith('update') and self.sql.count('=') != 2:  # 耗时43s
-                    # elif sql.startswith('update') and (('=' not in sql) or  ('where' not in sql)): # 耗时50s
-                    # elif sql.startswith('update') and 'where' not in sql: # 耗时43s
+                elif self.sql.startswith('update') and self.sql.count('=') != 2:
+                    a
                     return {'code': '12309', 'msg': 'update操作必须带where条件，一次只能修改一条数据'}
                 elif self.sql.startswith('create') or self.sql.startswith('alter') or self.sql.startswith(
                         'drop') or sql.startswith('truncate'):
@@ -56,6 +58,9 @@ class DbOperate(object):
 
 
 if __name__ == '__main__':
-    sql = "select * from point_total t"
+    sql = "select * from point_totals t"
     ret = DbOperate(sql).db_operate()
     print(ret)
+    # timew = datetime.datetime(2019, 4, 1, 10, 19, 16, 696549)
+
+    # print(time.mktime(time.struct_time(timew.timetuple())))
